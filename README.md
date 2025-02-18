@@ -4,11 +4,11 @@
 
 ## Install
 
-`punctuate` is available as a Nix flake. Clone the repo and build it:
+`punctuate` is available as a Nix flake:
 
 ```bash
-cd punctuate
-nix build
+nix shell github:SimonRenblad/punctuate             # try it out
+nix profile install github:SimonRenblad/punctuate   # install to profiles
 ```
 
 Or just run `python punctuate.py` / do what you want with it. `punctuate` does not depend on any additional python packages.
