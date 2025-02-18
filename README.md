@@ -1,6 +1,35 @@
 # punctuate
 
-`punctuate.py` is a simple python script to randomly punctuate and capitalize words, similar to certain online typing tests.
+`punctuate.py` is a simple python script to randomly punctuate and capitalize words, inspired by the features of a *certain* popular online typing test website.
+
+## Example
+
+```bash
+> cat example.txt
+roud
+pointfully
+scutibranchian
+acantha
+deferrized
+internecive
+alliterating
+propjet
+thrusher
+genny
+```
+```bash
+> ./punctuate.py example.txt
+'roud'
+Pointfully/
+scutibranchian
+acantha
+Deferrized
+internecive
+Alliterating
+Propjet
+thrusher
+Genny
+```
 
 ## Usage
 
@@ -16,7 +45,7 @@ Originally, I wrote `punctuate` in order to randomize inputs to CLI type testers
 shuf -n 30 word_list.txt | ./punctuate.py | ttyper -
 ```
 
-You can also adjust the likelihood that punctuate will alter a word. The example below will capitalize a word 50% of the time, punctuate it at the end 20% of the time and never punctuate it with brackets or quotes.
+You can also adjust the likelihood that `punctuate` will alter a word. The example below will capitalize a word 50% of the time, punctuate it at the end 20% of the time and never surround it with brackets or quotes.
 
 ```bash
 ./punctuate word_list.txt -c 50 -p 20 -d 0
