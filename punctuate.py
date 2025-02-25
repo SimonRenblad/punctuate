@@ -25,8 +25,8 @@ for line in fileinput.input(args.file):
     line = line.rstrip()
     if random.randint(0, 99) < args.capitalize:
         line = line.capitalize()
-    punct = random.sample(['.', '!', '/', ',', ';', ':'], 1)[0]
-    double_punct = random.sample(['""', "''", '()', '{}', '[]', '||'], 1)[0]
+    punct = random.sample(['.', '!', '/', ',', ';', ':', '+', '-', '*', '&', '@', '#', '$', '^', '=', '_', '~', '\\', '%'], 1)[0]
+    double_punct = random.sample(['""', "''", '()', '{}', '[]', '||', '``', '<>'], 1)[0]
     if random.randint(0, 99) < args.double_punct:
         line = double_punct[0] + line + double_punct[1]
     if random.randint(0, 99) < args.punctuate:
