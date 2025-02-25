@@ -26,11 +26,14 @@ for line in fileinput.input(args.file):
     if random.randint(0, 99) < args.capitalize:
         line = line.capitalize()
     punct = random.sample(['.', '!', '/', ',', ';', ':'], 1)[0]
-    double_punct = random.sample(['""', "''", '()', '{}', '[]'], 1)[0]
+    double_punct = random.sample(['""', "''", '()', '{}', '[]', '||'], 1)[0]
     if random.randint(0, 99) < args.double_punct:
         line = double_punct[0] + line + double_punct[1]
     if random.randint(0, 99) < args.punctuate:
-        line = line + punct
+        if random.randint(0, 1) == 0:
+            line = line + punct
+        else:
+            line = punct + line
     print(line, file=handle)
 
 handle.close()
